@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.StringJoiner;
 
 public class Bootcamp {
     private String nome;
@@ -65,5 +66,17 @@ public class Bootcamp {
     @Override
     public int hashCode() {
         return Objects.hash(nome, descricao, dataInicial, dataFinal, devsInscritos, conteudos);
+    }
+
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", Bootcamp.class.getSimpleName() + "[", "]")
+                .add("nome='" + nome + "'")
+                .add("descricao='" + descricao + "'")
+                .add("dataInicial=" + dataInicial)
+                .add("dataFinal=" + dataFinal)
+                .add("devsInscritos=" + devsInscritos)
+                .add("conteudos=" + conteudos)
+                .toString();
     }
 }
